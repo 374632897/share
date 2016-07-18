@@ -1,0 +1,140 @@
+html, body, .container { width: 100%; height: 100%; }
+html, body, ul, li, div, h1, h2, h3, h4, h5, h6 {
+  margin: 0; padding: 0; font-family: 'Segoe UI', 'SimHei', 'Microsoft Yahei'; color: #fff;
+}
+.center {
+  text-align: center;
+}
+.btn {
+  padding: 5px 10px;
+  background: #f66;
+  border: 1px solid #fcc;
+  border-radius: 2px;
+  text-align: center;
+  cursor: pointer;
+  /*color: #fff;*/
+  box-shadow: rgba(0, 0, 0, .6) 2px 3px 8px;
+  transition: opacity ease-out .2s;
+}
+.btn:hover {
+  background: #f00;
+}
+.large-center { /* 用于一张幻灯片只有一个元素时候突出显示并居中 */
+  font-size: 100px;
+  /*font-size: 60px;*/
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 800px) {
+  .large-center {
+    font-size: 60px;
+  }
+}
+.block {
+  width: 100%;
+}
+.ul > li {
+  margin: 20px 0;
+  /*position: absolute;
+  transform: translateX(-50%);
+  left: 50%;*/
+}
+.h2 {
+  font-size: 30px;
+  margin-bottom: 100px;
+}
+.h2 + .ul > li {
+  font-size: 26px;
+}
+.container {
+  position: relative;
+  background: #233;
+  overflow: hidden;
+  /*color: #fff;*/
+}
+.container-map {
+  position: relative;
+  z-index: -2;
+  height: 100%;
+  /*color: #fff;*/
+  transition: all ease-out .2s;
+  transform: translateY(-200%);
+}
+.container-map.showing {
+  transform: translateY(-100%);
+  z-index: 100;
+  overflow-y: auto;
+  /*margin-left: -1%;*/
+}
+.container-map .large-center {
+  font-size: 20px;
+}
+.container-map .share-box {
+  width: 22%;
+  float: left;
+  position: static;
+}
+.container-map .share-box + .share-box {
+  margin-left: 1%;
+}
+.share-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;/* hack 不知道是不是bug， 如果不加透明度的话， 全屏下所有的都显示出来了， z-index没起作用 */
+  padding: 100px 0;
+  transition: all ease-out .2s;
+}
+.share-box.showing {
+  z-index: 10;
+  opacity: 1;
+}
+.share-box > div,
+.share-box > ul > li,
+.share-box > p,
+.share-box > section {
+  transition: all ease-out .2s;
+  transform: translateX(100%);
+}
+.share-box > ul > li {
+  /*position: absolute;*/
+  transform: translateX(150%);
+}
+.share-box:nth-child(1),
+.share-box .shown  {
+  transform: translateX(0);
+}
+.share-box li.shown {
+  transform: translateX(47%);
+}
+/*.share-box > ul > li.shown {
+  transform: translateX(-50%);
+  left: 50%;
+}
+*/
+.full-screen-btn,
+.show-map {
+  position: fixed;
+  top: 20px;
+  opacity: .3;
+  right: 20px;
+  z-index: 10000;
+}
+.full-screen-btn:hover,
+.show-map:hover {
+  opacity: 1;
+}
+.full-screen-btn {
+  /*right: 150px;*/
+  right: 50px;
+}
+.underline.show {
+  text-decoration: line-through;
+}
+/*.center-middle {
+  text-align: center;
+}*/
